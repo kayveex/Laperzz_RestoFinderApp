@@ -1,0 +1,34 @@
+/*************************************************************************
+ * Design System CSS File
+ **************************************************************************/
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Color Palette */
+:root {
+    --primary-dark: #171923;
+    --secondary-dark: #212330;
+    --main-yellow: #EEBE43;
+    --second-yellow: #CBA543;
+    --white-color: #FFFFFF;
+}
+
+/* Global Setting */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background-color: var(--primary-dark);
+}
+
+/* Custom Scroll */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--secondary-dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--main-yellow);
+    border-radius: 5px;
+  }
