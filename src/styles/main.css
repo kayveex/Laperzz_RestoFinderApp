@@ -63,18 +63,22 @@
 }
 
 #hamburger_button {
-  margin-right: 50px;
+  margin-right: 40px;
   background-color: transparent;
   border: none;
   color: var(--main-yellow);
   font-size: 1.5rem;
   cursor: pointer;
+  height: 44px;
+  width: 44px;
 }
 
 #mob_drawer {
   width: 250px;
   height: 100%;
   position: absolute;
+  display: flex;
+  flex-direction: column;
 
   transform: translate(-250px, 0);
   transition: transform 0.3s ease-in-out;
@@ -92,6 +96,7 @@
 
 .mob_item {
   padding: 5px 0;
+  margin-bottom: 2rem;
 }
 
 .mob_item>a {
@@ -99,6 +104,8 @@
   color: var(--white-color);
   font-weight: bold;
   font-size: 20px;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 .mob_item>a:hover {
