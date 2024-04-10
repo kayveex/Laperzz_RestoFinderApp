@@ -32,3 +32,19 @@ body {
     background-color: var(--main-yellow);
     border-radius: 5px;
   }
+
+  /* Skip to Content */
+  .skip_link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: var(--main-yellow);
+    color: var(--primary-dark);
+    font-weight: 700;
+    padding: 8px;
+    z-index: 100;
+  }
+
+  .skip_link:focus{
+    top: 0;
+  }

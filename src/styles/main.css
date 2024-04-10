@@ -175,6 +175,15 @@
   border-radius: 10px;
 }
 
+.resto_item:hover {
+  transform: scale(1.1);
+}
+
+
+.resto_item:focus {
+  transform: scale(1.1);
+}
+
 .img_resto {
   max-width: 400px;
   width: 100%;
@@ -272,6 +281,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.choose_us_item:hover {
+  border: 2.5px solid #EEBE43;
 }
 
 .wrapper_content {

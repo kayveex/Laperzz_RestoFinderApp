@@ -21,6 +21,7 @@ class ExploreRestoSection extends HTMLElement {
         // Create the h2 element
         const heading = document.createElement('h2');
         heading.textContent = 'Explore Restaurant';
+        heading.setAttribute('tabindex', '0');
     
         // Create the div element with the class "wrapper_resto"
         const wrapperResto = document.createElement('div');
@@ -42,14 +43,14 @@ class ExploreRestoSection extends HTMLElement {
             restoData.forEach(resto => {
                 wrapperResto.innerHTML += `
                     <div class="resto_item">
-                        <div class="location_item">
-                            <h4>${resto.city}</h4>
+                        <div tabindex="0" class="location_item">
+                            <h4 aria-label="Restaurant location: ${resto.city}">${resto.city}</h4>
                         </div>
-                        <img class="img_resto" src="${resto.pictureId}" alt="">
+                        <img tabindex="0" class="img_resto" src="${resto.pictureId}" alt="restaurant image">
                         <div class="resto_item_textwrap">
-                            <h5 class="rating_item">Rating: ${resto.rating} / 5</h5>
-                            <h3 class="title_item">${resto.name}</h3>
-                            <p class="desc_item">${resto.description.slice(0,100)}...</p>
+                            <h5 tabindex="0" class="rating_item">Rating: ${resto.rating} / 5</h5>
+                            <h3 tabindex="0" aria-label="Restaurant name: ${resto.name}" class="title_item">${resto.name}</h3>
+                            <p tabindex="0" aria-label="Restaurant description: ${resto.description}" class="desc_item">${resto.description.slice(0,100)}...</p>
                         </div>
                     </div>
                 `;
