@@ -17,6 +17,15 @@
   justify-content: space-between;
 }
 
+/* Not Found Route */
+.not-found {
+  color: var(--white-color);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 #navbar_logo {
   margin-left: 80px;
 }
