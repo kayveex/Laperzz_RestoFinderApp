@@ -9,6 +9,7 @@ class RestoDBSource {
 	static async restoLists() {
 		const response = await fetch(API_ENDPOINT.RESTO_LISTS);
 		const responseJson = await response.json();
+		console.log(responseJson.restaurants);
 		return responseJson.restaurants;
 	}
 

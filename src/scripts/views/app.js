@@ -14,7 +14,6 @@ class App {
 			}
 
 			main.innerHTML = await page.render();
-			await page.afterRender();
 
 			const skipLink = document.querySelector('.skip-link');
 			skipLink.addEventListener('click', e => {

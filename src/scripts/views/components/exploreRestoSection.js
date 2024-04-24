@@ -1,4 +1,9 @@
+
 /* eslint-disable no-useless-constructor */
+
+import RestoDBSource from '../../data/restodb-source';
+import createRestoItemTemplate from './subcomponent/resto-item';
+
 class ExploreRestoSection extends HTMLElement {
 	constructor() {
 		super();
@@ -38,48 +43,14 @@ class ExploreRestoSection extends HTMLElement {
 		this.appendChild(section);
 
 		try {
-			// Get the data from JSON
-			const restoData = await this.getRestoData();
-
+			// Get the data from API
+			const restoData = await RestoDBSource.restoLists();
 			restoData.forEach(resto => {
-				wrapperResto.innerHTML += `
-                    <div class="resto_item">
-                        <div tabindex="0" class="location_item">
-                            <h4 aria-label="Restaurant location: ${resto.city}">${resto.city}</h4>
-                        </div>
-                        <img tabindex="0" class="img_resto" src="${resto.pictureId}" alt="restaurant image">
-                        <div class="resto_item_textwrap">
-                            <h5 tabindex="0" class="rating_item">Rating: ${resto.rating} / 5</h5>
-                            <h3 tabindex="0" aria-label="Restaurant name: ${resto.name}" class="title_item">${resto.name}</h3>
-                            <p tabindex="0" aria-label="Restaurant description: ${resto.description}" class="desc_item">${resto.description.slice(0, 100)}...</p>
-                        </div>
-                    </div>
-                `;
+				wrapperResto.innerHTML += createRestoItemTemplate(resto);
 			});
 		} catch (error) {
 			console.error('Error rendering restaurant data:', error);
 			// You may want to handle the error here
-		}
-	}
-
-	async getRestoData() {
-		try {
-			const {
-				default: jsonData,
-			} = await import('../../../public/data/DATA.json');
-
-			// Check JSON Data
-			console.log(jsonData);
-
-			// Get the data from JSON
-			const restoData = jsonData.restaurants;
-			console.log(restoData);
-			return restoData;
-		} catch (error) {
-			console.error('Error fetching JSON data:', error);
-			// eslint-disable-next-line no-alert
-			window.alert('An error occurred while fetching data. Please try again later.');
-			throw error; // Rethrow the error to handle it further if necessary
 		}
 	}
 }

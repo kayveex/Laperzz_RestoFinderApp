@@ -3,18 +3,17 @@
  **************************************************************************/
 // Imports
 import '../components/heroSection.js';
+import '../components/exploreRestoSection.js';
+import '../components/chooseUsSection.js';
 
 const RestoLists = {
 	async render() {
 		return `
             <hero-section></hero-section>
+			<explore-resto-section></explore-resto-section>
+			<choose-us-section></choose-us-section>
         `;
 	},
-
-	async afterRender() {
-		// This is where you can place the logic to be executed after the rendering of this page
-	},
-
 };
 
 export default RestoLists;
