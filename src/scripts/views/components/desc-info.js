@@ -23,6 +23,7 @@ class DescInfo extends HTMLElement {
 		const descSection = document.createElement('section');
 		descSection.id = 'resto_desc';
 		descSection.innerHTML = `
+        <div class="wrapper_resto_desc">
             <div id="wrap_desc_title">
                 <i class="ri-edit-fill"></i>
                 <h3>Description</h3>
@@ -30,6 +31,7 @@ class DescInfo extends HTMLElement {
             <div id="desc_content">
                 <p>${description}</p>
             </div>
+        </div>
         `;
 		this.appendChild(descSection);
 	}
