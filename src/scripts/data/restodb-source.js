@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*************************************************************************
  * Restaurants Database Source
  **************************************************************************/
@@ -44,7 +45,6 @@ class RestoDBSource {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'X-Auth-Token': CONFIG.API_KEY,
 			},
 			body: JSON.stringify(review),
 		});

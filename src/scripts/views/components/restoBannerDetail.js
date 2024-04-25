@@ -45,8 +45,8 @@ class RestoBannerDetail extends HTMLElement {
 		const bannerSection = document.createElement('section');
 		bannerSection.id = 'resto_banner';
 		bannerSection.innerHTML = `
-            <h1 tabindex="0">${title}</h1>
-            <h2 tabindex="0">${subtitle}</h2>
+            <h1 tabindex="0" aria-label="Restaurant name: ${title}" tabindex="0">${title}</h1>
+            <h2 tabindex="0" aria-label="Restaurant city: ${subtitle}" tabindex="0">${subtitle}</h2>
         `;
 
 		this.appendChild(bannerSection);

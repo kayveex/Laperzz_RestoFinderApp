@@ -2,9 +2,7 @@
  * Restaurant List Page
  **************************************************************************/
 // Imports
-import '../components/heroSection.js';
-import '../components/exploreRestoSection.js';
-import '../components/chooseUsSection.js';
+import '../components/components.js';
 
 const RestoLists = {
 	async render() {

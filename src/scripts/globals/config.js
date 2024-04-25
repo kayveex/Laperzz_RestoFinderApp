@@ -9,6 +9,7 @@ const CONFIG = {
 	DATABASE_NAME: 'restaurant-database',
 	DATABASE_VERSION: 1,
 	OBJECT_STORE_NAME: 'restaurants',
+	API_KEY: 'testing key',
 };
 
 export default CONFIG;

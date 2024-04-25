@@ -5,15 +5,13 @@
 import UrlParser from '../../routes/url-parser';
 import RestoDBSource from '../../data/restodb-source';
 import API_ENDPOINT from '../../globals/api-endpoint.js';
-import '../components/restoBannerDetail.js';
-import '../components/detail-info.js';
-import '../components/desc-info.js';
-import '../components/food-menu.js';
+import '../components/components.js';
 
 const RestoDetail = {
 	async render() {
 		const url = UrlParser.parseActiveUrlWithoutCombiner();
 		const resto = await RestoDBSource.restoDetail(url.id);
+		console.log(resto.customerReviews);
 		return `
             <resto-banner-detail srcBackground="${API_ENDPOINT.IMAGE_LARGE(resto.pictureId)}" 
 				title="${resto.name}" 
@@ -25,6 +23,8 @@ const RestoDetail = {
 			</detail-info>
 			<desc-info description="${resto.description}" ></desc-info>
 			<food-menu foods='${JSON.stringify(resto.menus.foods)}' drinks='${JSON.stringify(resto.menus.drinks)}'></food-menu>
+			<review-form id="${resto.id}"></review-form>
+			<comment-section comments='${JSON.stringify(resto.customerReviews)}'></comment-section>
         `;
 	},
 };
