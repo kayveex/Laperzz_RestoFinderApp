@@ -358,6 +358,50 @@
   margin-top: -1rem;
 }
 
+/* Detail Resto Container */
+#resto_detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.detailContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-width: 300px;
+  height: 50px;
+  background-color: var(--secondary-dark);
+  border-radius: 10px;
+}
+
+.detailContainer > i {
+  color: var(--main-yellow);
+  font-size: 24px;
+  margin-left: 20px;
+
+}
+
+.detailContainer > h3 {
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+#right > i {
+  margin-right: 20px;
+}
+
+#right > h3 {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
 /* Main - End */
 /* ********************************* */
 /* Footer - Start */
@@ -416,6 +460,26 @@
     align-items: center;
     justify-content: center;
   }
+
+  #resto_detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .detailContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    min-width: 600px;
+    height: 50px;
+    background-color: var(--secondary-dark);
+    border-radius: 10px;
+  }
 }
 
 /* Media Screen for Smartphone Mode */
@@ -446,5 +510,34 @@
     gap: 25px;
     align-items: center;
     justify-content: center;
+  }
+
+  #resto_detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .detailContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    min-width: 300px;
+    width: 350px;
+    max-width: 400px;
+    height: 50px;
+    background-color: var(--secondary-dark);
+    border-radius: 10px;
+  }
+
+  .detailContainer > h3 {
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 20px;
   }
 }
