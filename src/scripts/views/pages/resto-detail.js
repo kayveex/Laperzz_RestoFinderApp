@@ -8,6 +8,7 @@ import API_ENDPOINT from '../../globals/api-endpoint.js';
 import '../components/restoBannerDetail.js';
 import '../components/detail-info.js';
 import '../components/desc-info.js';
+import '../components/food-menu.js';
 
 const RestoDetail = {
 	async render() {
@@ -23,6 +24,7 @@ const RestoDetail = {
 				categories='${JSON.stringify(resto.categories)}' >
 			</detail-info>
 			<desc-info description="${resto.description}" ></desc-info>
+			<food-menu foods='${JSON.stringify(resto.menus.foods)}' drinks='${JSON.stringify(resto.menus.drinks)}'></food-menu>
         `;
 	},
 };

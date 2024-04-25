@@ -14,13 +14,6 @@ class App {
 			}
 
 			main.innerHTML = await page.render();
-
-			const skipLink = document.querySelector('.skip-link');
-			skipLink.addEventListener('click', e => {
-				e.preventDefault();
-				const main = document.querySelector('#mainContent');
-				main.focus();
-			});
 		} catch (error) {
 			console.error('Error rendering page:', error);
 		}

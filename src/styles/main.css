@@ -420,7 +420,7 @@
   max-width: 1245px;
   min-height: 250px;
   background-color: var(--secondary-dark);
-  padding: 0 2rem;
+  padding: 0 3rem;
   border-radius: 10px;
 }
 
@@ -447,6 +447,54 @@
   color: var(--white-color);
   font-size: 16px;
   font-weight: 400;
+}
+
+/* Restaurant Menu Section */
+#menu_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrap_title_menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  color: var(--main-yellow);
+  font-size: 32px;
+}
+
+.wrap_menu_list  {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.menu_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 75px;
+  border-radius: 10px;
+  background-color: var(--secondary-dark);
+}
+
+.menu_item > h4 {
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 
@@ -529,6 +577,24 @@
     background-color: var(--secondary-dark);
     border-radius: 10px;
   }
+
+  #menu_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .menu_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 75px;
+    border-radius: 10px;
+    background-color: var(--secondary-dark);
+  }
 }
 
 /* Media Screen for Smartphone Mode */
@@ -588,5 +654,27 @@
     font-size: 14px;
     font-weight: 700;
     margin-left: 20px;
+  }
+
+  .wrapper_resto_desc {
+    padding: 2rem 3rem;
+  }
+
+  #menu_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .menu_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--secondary-dark);
   }
 }
