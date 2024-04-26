@@ -14,6 +14,12 @@ class App {
 			}
 
 			main.innerHTML = await page.render();
+
+			const skipLinkElem = document.querySelector('.skip_link');
+			skipLinkElem.addEventListener('click', event => {
+				event.preventDefault();
+				document.querySelector('#mainContent').focus();
+			});
 		} catch (error) {
 			console.error('Error rendering page:', error);
 		}

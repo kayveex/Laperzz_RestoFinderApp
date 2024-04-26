@@ -45,6 +45,7 @@
   color: var(--white-color);
   font-weight: bold;
   font-size: 16px;
+  padding: 20px 20px;
 }
 
 .nav_item>a:hover {
@@ -267,6 +268,7 @@
   line-height: normal;
 }
 
+
 .title_item:hover {
   color: var(--second-yellow);
   cursor: pointer;
@@ -275,6 +277,7 @@
 .title_item>a {
   text-decoration: none;
   color: var(--main-yellow);
+  padding-bottom: 1rem;
 }
 
 .title_item>a:hover {
@@ -535,8 +538,9 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid var(--main-yellow);
-  height: 25px;
+  height: 45px;
   margin-bottom: 1rem;
+  padding: 0 2rem;
 }
 
 #name_input::placeholder {
@@ -589,10 +593,11 @@
   color: var(--secondary-dark);
   font-size: 16px;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border-radius: 5px;
   cursor: pointer;
 }
+
 
 #submit_review:hover {
   background-color: var(--second-yellow);
@@ -789,16 +794,18 @@
 @media screen and (min-width: 320px) and (max-width: 837px) {
   #hero_element>h1 {
     font-size: 32px;
+    padding-top: 0.5rem;
   }
 
   #hero_element>h2 {
     font-size: 20px;
     margin-top: -1rem;
+    padding-bottom: 1.5rem;
   }
 
   .wrapper_resto {
     display: grid;
-    grid-template-columns: repeat(1, minmax(400px, 1fr));
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fit, 400px);
     gap: 25px;
     align-items: center;
@@ -808,7 +815,7 @@
   .wrapper_choose_us {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(1, minmax(400px, 1fr));
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fit, 400px);
     gap: 25px;
     align-items: center;
@@ -830,7 +837,7 @@
     align-items: center;
     flex-direction: row;
     min-width: 300px;
-    width: 350px;
+    width: 300px;
     max-width: 400px;
     height: 50px;
     background-color: var(--secondary-dark);
@@ -839,13 +846,14 @@
 
   .detailContainer > h3 {
     color: var(--white-color);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     margin-left: 20px;
   }
 
   .wrapper_resto_desc {
-    padding: 2rem 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   #menu_section {
@@ -860,7 +868,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    width: 300px;
     height: 50px;
     border-radius: 10px;
     background-color: var(--secondary-dark);
@@ -877,13 +885,12 @@
 
   .comment_item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 25px;
     background-color: var(--secondary-dark);
-    width: 350px;
+    width: 230px;
     border-radius: 10px;
-    padding: 2rem 2rem;
   }
 
   #resto_banner>h1 {
@@ -902,4 +909,88 @@
     line-height: normal;
     margin-top: -1.5rem;
   }
+
+  .resto_item {
+    background-color: var(--secondary-dark);
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  .choose_us_item {
+    background-color: var(--secondary-dark);
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #explore_resto > h2 {
+    font-size: 24px;
+  }
+
+  #choose_us > h2 {
+    font-size: 24px;
+  }
+
+  #choose_us > h3 {
+    font-size: 14px;
+    width: 85%;
+    margin-top: -1rem;
+  }
+
+  #wrap_desc_title  {
+    padding: 0 1rem;
+  }
+
+  #wrap_desc_title > i {
+    color: var(--main-yellow);
+    font-size: 24px;
+  
+  }
+  
+  #desc_content {
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 1rem;
+  }
+
+  .wrapper_resto_desc {
+    padding: 0;
+  }
+
+  .wrap_title_menu {
+    font-size: 20px;
+  }
+
+  .review_title {
+    font-size: 20px;
+  }
+
+  #review_form {
+    width: 300px;
+    padding: 0;
+  }
+
+  #name_input {
+    margin: 0.5rem 1rem;
+  }
+
+  #review_input {
+    margin: 0.5rem 1rem;
+  }
+
+  #submit_review {
+    margin: 0.5rem 1rem;
+  }
+
+  #footer_laperzz > h4 {
+    font-size: 14px;
+    text-align: center;
+  }
+
 }
