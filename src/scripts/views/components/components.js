@@ -13,3 +13,4 @@ import '../components/desc-info.js';
 import '../components/food-menu.js';
 import '../components/review-form.js';
 import '../components/comment-section.js';
+import '../components/like-button.js';
