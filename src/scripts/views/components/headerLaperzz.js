@@ -20,8 +20,8 @@ class HeaderLaperzz extends HTMLElement {
             <nav id="navbar_laperzz">
                 <img tabindex="0" id="navbar_logo" src="images/logo_laperzz.png" alt="laperzzLogo">
                 <ul class="navlist">
-                    <li class="nav_item"><a href="">Home</a></li>
-                    <li class="nav_item"><a href="#">Favorite</a></li>
+                    <li class="nav_item"><a href="/">Home</a></li>
+                    <li class="nav_item"><a href="#/liked">Favorite</a></li>
                     <li class="nav_item"><a target="_blank" href="https://www.linkedin.com/in/kornelius-rhesa/">About Us</a></li>
                 </ul>
             </nav>
@@ -38,8 +38,8 @@ class HeaderLaperzz extends HTMLElement {
             </nav>
             <section id="mob_drawer">
                 <ul class="mob_list">
-                    <li class="mob_item"><a href="">Home</a></li>
-                    <li class="mob_item"><a href="#">Favorite</a></li>
+                    <li class="mob_item"><a href="/">Home</a></li>
+                    <li class="mob_item"><a href="#/liked">Favorite</a></li>
                     <li class="mob_item"><a target="_blank" href="https://www.linkedin.com/in/kornelius-rhesa/">About Us</a></li>
                 </ul>
             </section>

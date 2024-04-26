@@ -883,4 +883,21 @@
     border-radius: 10px;
     padding: 2rem 2rem;
   }
+
+  #resto_banner>h1 {
+    color: var(--main-yellow);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  #resto_banner>h2 {
+    color: var(--white-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: -1.5rem;
+  }
 }
