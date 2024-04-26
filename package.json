@@ -46,6 +46,7 @@
     "idb": "^8.0.0",
     "regenerator-runtime": "^0.14.0",
     "remixicon": "^4.2.0",
+    "sweetalert2": "^11.10.8",
     "workbox-window": "^7.0.0"
   }
 }

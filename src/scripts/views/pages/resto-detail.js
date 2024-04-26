@@ -6,12 +6,33 @@ import UrlParser from '../../routes/url-parser';
 import RestoDBSource from '../../data/restodb-source';
 import API_ENDPOINT from '../../globals/api-endpoint.js';
 import '../components/components.js';
+const Swal = require('sweetalert2');
 
 const RestoDetail = {
 	async render() {
+		// Record start time
+		const startTime = performance.now();
+
+		// Get the data from API
 		const url = UrlParser.parseActiveUrlWithoutCombiner();
 		const resto = await RestoDBSource.restoDetail(url.id);
-		console.log(resto.id);
+
+		// Record end time
+		const endTime = performance.now();
+		const apiLatency = endTime - startTime;
+		const timerDuration = Math.max(apiLatency, 1000);
+
+		await Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: 'Successfully loaded the restaurant information!',
+			showConfirmButton: false,
+			background: '#212330',
+			color: 'white',
+			timer: timerDuration,
+			timerProgressBar: true,
+		});
+
 		return `
             <resto-banner-detail srcBackground="${API_ENDPOINT.IMAGE_LARGE(resto.pictureId)}" 
 				title="${resto.name}" 

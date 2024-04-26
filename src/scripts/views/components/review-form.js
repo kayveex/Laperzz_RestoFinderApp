@@ -3,6 +3,7 @@
 /* eslint-disable no-useless-constructor */
 import '../../data/restodb-source.js';
 import RestoDBSource from '../../data/restodb-source.js';
+const Swal = require('sweetalert2');
 
 class ReviewForm extends HTMLElement {
 	constructor() {
@@ -29,14 +30,14 @@ class ReviewForm extends HTMLElement {
 		formSection.innerHTML = `
             <div class="review_title">
                 <i class="ri-search-eye-line"></i>
-                <h3>Customer Review</h3>
+                <h3 tabindex="0">Customer Review</h3>
             </div>
             <form id="review_form">
-                <input type="text" name="name_input" id="name_input" placeholder="Your name..." aria-label="Insert your name">
-                <h5 id="error_name">Test</h5>
-                <textarea placeholder="Review about the restaurant..." name="review_input" id="review_input" cols="30" rows="10"></textarea>
-                <h5 id="error_review"></h5>
-                <button type="submit" id="submit_review">Submit</button>
+                <input tabindex="0" type="text" name="name_input" id="name_input" placeholder="Your name..." aria-label="Insert your name">
+                <h5 tabindex="0" id="error_name">Test</h5>
+                <textarea tabindex="0" placeholder="Review about the restaurant..." name="review_input" id="review_input" cols="30" rows="10"></textarea>
+                <h5 tabindex="0" id="error_review"></h5>
+                <button tabindex="0" aria-label="Review Submit Button" type="submit" id="submit_review">Submit</button>
             </form>
         `;
 		this.appendChild(formSection);
@@ -85,15 +86,40 @@ class ReviewForm extends HTMLElement {
 					review: reviewInput.value,
 				};
 
-				// Fetch POST
-				RestoDBSource.addReview(reviewData);
+				try {
+					const startTime = performance.now();
+					RestoDBSource.addReview(reviewData);
+					const endTime = performance.now();
 
-				// Reload the page
-				location.reload();
+					const apiLatency = endTime - startTime;
+					const timerDuration = Math.max(apiLatency, 1000);
 
-				// Reset form
-				nameInput.value = '';
-				reviewInput.value = '';
+					await Swal.fire({
+						position: 'center',
+						icon: 'success',
+						title: 'Sucessfully added the review!',
+						showConfirmButton: false,
+						background: '#212330',
+						color: 'white',
+						timer: timerDuration,
+					});
+
+					// Reload the page
+					location.reload();
+
+					// Reset form
+					nameInput.value = '';
+					reviewInput.value = '';
+				} catch (error) {
+					console.error('Error sending review:', error);
+					Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Something went wrong while adding the review. Please try again later.',
+						background: '#212330',
+						color: 'white',
+					});
+				}
 			}
 		});
 	}

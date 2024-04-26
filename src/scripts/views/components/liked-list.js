@@ -40,9 +40,25 @@ class LikedList extends HTMLElement {
 		// Append the section to the custom element
 		this.appendChild(section);
 
+		// Adding Loading Indicator
+		wrapperResto.innerHTML = '<h1 id="loading_text">Loading...</h1>';
+
+		// Record start time
+		const startTime = Date.now();
+
 		try {
 			// Get the data from API
 			const restoData = await FavoriteRestoIdb.getAllResto();
+			const elapsedTime = Date.now() - startTime;
+			const timeoutDuration = Math.max(2000 - elapsedTime, 0);
+
+			// Clear Loading indicator after timeoutDuration
+			setTimeout(() => {
+				const loadingIndicator = wrapperResto.querySelector('#loading_text');
+				if (loadingIndicator) {
+					loadingIndicator.remove();
+				}
+			}, timeoutDuration);
 			restoData.forEach(resto => {
 				wrapperResto.innerHTML += createRestoItemTemplate(resto);
 			});

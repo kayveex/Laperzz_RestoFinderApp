@@ -23,10 +23,10 @@ class DescInfo extends HTMLElement {
 		const descSection = document.createElement('section');
 		descSection.id = 'resto_desc';
 		descSection.innerHTML = `
-        <div tabindex="0" class="wrapper_resto_desc">
+        <div class="wrapper_resto_desc">
             <div id="wrap_desc_title">
-                <i class="ri-edit-fill"></i>
-                <h3>Description</h3>
+                <i tabindex="0" aria-label="description logo" class="ri-edit-fill"></i>
+                <h3 tabindex="0">Description</h3>
             </div>
             <div tabindex="0" id="desc_content">
                 <p>${description}</p>

@@ -48,3 +48,8 @@ body {
   .skip_link:focus{
     top: 0;
   }
+
+  #loading_text {
+    color: var(--main-yellow);
+    font-size: 1.5rem;
+  }

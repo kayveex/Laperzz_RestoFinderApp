@@ -42,15 +42,31 @@ class ExploreRestoSection extends HTMLElement {
 		// Append the section to the custom element
 		this.appendChild(section);
 
+		// Adding Loading Indicator
+		wrapperResto.innerHTML = '<h1 id="loading_text">Loading...</h1>';
+
+		// Record start time
+		const startTime = Date.now();
+
 		try {
 			// Get the data from API
 			const restoData = await RestoDBSource.restoLists();
+			const elapsedTime = Date.now() - startTime;
+			const timeoutDuration = Math.max(2000 - elapsedTime, 0);
+
+			// Clear Loading indicator after timeoutDuration
+			setTimeout(() => {
+				const loadingIndicator = wrapperResto.querySelector('#loading_text');
+				if (loadingIndicator) {
+					loadingIndicator.remove();
+				}
+			}, timeoutDuration);
+
 			restoData.forEach(resto => {
 				wrapperResto.innerHTML += createRestoItemTemplate(resto);
 			});
 		} catch (error) {
 			console.error('Error rendering restaurant data:', error);
-			// You may want to handle the error here
 		}
 	}
 }

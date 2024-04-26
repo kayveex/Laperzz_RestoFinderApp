@@ -28,9 +28,9 @@ class CommentSection extends HTMLElement {
                         <img src="images/default_profile.png" alt="Default Profile Picture">
                     </div>
                     <div class="comment_content">
-                        <h3>${comment.name}</h3>
-                        <p>${comment.review}</p>
-                        <h5>${comment.date}</h5>
+                        <h3 tabindex="0">${comment.name}</h3>
+                        <p tabindex="0">${comment.review}</p>
+                        <h5 tabindex="0">${comment.date}</h5>
                     </div>
                 </div> 
             `).join('')}

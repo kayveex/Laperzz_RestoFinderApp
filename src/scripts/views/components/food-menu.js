@@ -25,26 +25,26 @@ class FoodMenu extends HTMLElement {
 		menuSection.innerHTML = `
         <div id="left_menu" class="menu_container">
             <div class="wrap_title_menu">
-                <i class="ri-bowl-fill"></i>
-                <h3>Food Menu</h3>
+                <i aria-label="food logo" class="ri-bowl-fill"></i>
+                <h3 tabindex="0">Food Menu</h3>
             </div>
             <div class="wrap_menu_list">
             ${foods.map(food => `
                 <div class="menu_item">
-                    <h4>${food.name}</h4>
+                    <h4 tabindex="0">${food.name}</h4>
                 </div>
             `).join('')}
             </div>        
         </div>
         <div id="right_menu" class="menu_container">
             <div class="wrap_title_menu">
-                <i class="ri-drinks-fill"></i>
-                <h3>Drink Menu</h3>
+                <i aria-label="drink logo" class="ri-drinks-fill"></i>
+                <h3 tabindex="0">Drink Menu</h3>
             </div>
             <div class="wrap_menu_list">
                 ${drinks.map(drink => `
                 <div class="menu_item">
-                    <h4>${drink.name}</h4>
+                    <h4 tabindex="0">${drink.name}</h4>
                 </div> 
                 `).join('')}
             </div>
