@@ -1,18 +1,15 @@
-/*************************************************************************
- * API ENDPOINT
- **************************************************************************/
-
-// Imports
+/* eslint-disable indent */
+/* eslint-disable arrow-parens */
 import CONFIG from './config';
 
 const API_ENDPOINT = {
-	RESTO_LISTS: `${CONFIG.BASE_URL}list`,
-	RESTO_DETAIL: id => `${CONFIG.BASE_URL}detail/${id}`,
-	SEARCH_RESTO: query => `${CONFIG.BASE_URL}search?q=${query}`,
-	ADD_REVIEW: `${CONFIG.BASE_URL}review`,
-	IMAGE_SMALL: imageId => `${CONFIG.BASE_IMAGE_URL}small/${imageId}`,
-	IMAGE_MEDIUM: imageId => `${CONFIG.BASE_IMAGE_URL}medium/${imageId}`,
-	IMAGE_LARGE: imageId => `${CONFIG.BASE_IMAGE_URL}large/${imageId}`,
+  LIST_RESTAURANTS: `${CONFIG.BASE_URL}list`,
+  DETAIL_RESTAURANT: (id) => `${CONFIG.BASE_URL}detail/${id}`,
+  SEARCH_RESTAURANTS: (query) => `${CONFIG.BASE_URL}search?q=${query}`,
+  ADD_REVIEW: `${CONFIG.BASE_URL}/review`,
+  SMALL_IMAGE: (pictureId) => `${CONFIG.BASE_IMAGE_URL}/small/${pictureId}`,
+  MEDIUM_IMAGE: (pictureId) => `${CONFIG.BASE_IMAGE_URL}/medium/${pictureId}`,
+  LARGE_IMAGE: (pictureId) => `${CONFIG.BASE_IMAGE_URL}/large/${pictureId}`,
 };
 
 export default API_ENDPOINT;

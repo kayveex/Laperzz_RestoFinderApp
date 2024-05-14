@@ -139,7 +139,11 @@
   width: 100%;
 
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%),
-    lightgray url('../public/images/heros/hero-image_2.jpg') no-repeat center / cover;
+    lightgray url('../../dist/images/hero-image_2-lg.jpg') no-repeat center / cover;
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%),
+    lightgray url('images/hero-image_2-lg.jpg') no-repeat center / cover; */
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%),
+    lightgray url('../public/images/heros/hero-image_2.jpg') no-repeat center / cover; */
 }
 
 #hero_element>h1 {
@@ -672,6 +676,63 @@
   cursor: pointer;
 }
 
+#searchForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+#searchForm > button {
+  background-color: var(--main-yellow);
+  border: none;
+  color: var(--secondary-dark);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#query {
+  background-color: var(--secondary-dark);
+  border: none;
+  border: 2px solid var(--main-yellow);
+  border-radius: 5px;
+  height: 45px;
+  padding: 0 2rem;
+  width: 300px;
+}
+
+#query::placeholder {
+  color: var(--main-yellow);
+  font-size: 16px;
+}
+
+#query:focus {
+  outline: none;
+  color: var(--main-yellow);
+  font-size: 16px;
+  padding-left: 0.5rem;
+}
+
+#query:valid {
+  font-size: 16px;
+  color: var(--main-yellow);
+  padding-left: 0.5rem;
+}
+
+.restaurant-item__not__found {
+  color: var(--white-color);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 /* Main - End */
 /* ********************************* */
 /* Footer - Start */
@@ -993,4 +1054,22 @@
     text-align: center;
   }
 
+  #query {
+    background-color: var(--secondary-dark);
+    border: none;
+    border: 2px solid var(--main-yellow);
+    border-radius: 5px;
+    height: 45px;
+    padding: 0 2rem;
+    width:175px;
+  }
+
+  #hero_element {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%),
+    lightgray url('../../dist/images/hero-image_2-sm.jpg') no-repeat center / cover;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%),
+    lightgray url('images/heros/hero-image_2-sm.jpg') no-repeat center / cover; */
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%),
+    lightgray url('../public/images/heros/hero-image_2.jpg') no-repeat center / cover; */
+  }
 }

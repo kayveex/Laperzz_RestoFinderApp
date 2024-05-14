@@ -1,8 +1,8 @@
 
 /* eslint-disable object-shorthand */
 /* eslint-disable no-useless-constructor */
-import '../../data/restodb-source.js';
-import RestoDBSource from '../../data/restodb-source.js';
+import '../../data/therestaurantdb-source.js';
+import RestoDBSource from '../../data/therestaurantdb-source.js';
 const Swal = require('sweetalert2');
 
 class ReviewForm extends HTMLElement {

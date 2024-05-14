@@ -4,6 +4,7 @@
 
 // CSS Import
 import '../styles/main.css';
+import '../styles/design_sys.css';
 
 // Component Import
 import './views/components/components.js';

@@ -18,7 +18,7 @@ class HeaderLaperzz extends HTMLElement {
 	renderNavbar() {
 		this.innerHTML += `
             <nav id="navbar_laperzz">
-                <img tabindex="0" id="navbar_logo" src="images/logo_laperzz.png" alt="laperzzLogo">
+                <img tabindex="0" id="navbar_logo" src="webAssets/logo_laperzz.png" alt="laperzzLogo">
                 <ul class="navlist">
                     <li class="nav_item"><a href="/">Home</a></li>
                     <li class="nav_item"><a href="#/liked">Favorite</a></li>
@@ -31,7 +31,7 @@ class HeaderLaperzz extends HTMLElement {
 	renderMobileNavbar() {
 		this.innerHTML += `
             <nav id="navbar_laperzz_mobile">
-                <img tabindex="0" id="navbar_logo_mob" src="images/logo_laperzz.png" alt="laperzzLogoMobile">
+                <img tabindex="0" id="navbar_logo_mob" src="webAssets/logo_laperzz.png" alt="laperzzLogoMobile">
                 <button id="hamburger_button" aria-label="Menu Toggle">
                     <i class="ri-menu-line"></i>
                 </button>

@@ -3,7 +3,7 @@
  **************************************************************************/
 /* eslint-disable new-cap */
 import UrlParser from '../../routes/url-parser';
-import RestoDBSource from '../../data/restodb-source';
+import RestoDBSource from '../../data/therestaurantdb-source';
 import API_ENDPOINT from '../../globals/api-endpoint.js';
 import '../components/components.js';
 const Swal = require('sweetalert2');
@@ -15,7 +15,7 @@ const RestoDetail = {
 
 		// Get the data from API
 		const url = UrlParser.parseActiveUrlWithoutCombiner();
-		const resto = await RestoDBSource.restoDetail(url.id);
+		const resto = await RestoDBSource.detailRestaurant(url.id);
 
 		// Record end time
 		const endTime = performance.now();
@@ -34,7 +34,9 @@ const RestoDetail = {
 		});
 
 		return `
-            <resto-banner-detail srcBackground="${API_ENDPOINT.IMAGE_LARGE(resto.pictureId)}" 
+            <resto-banner-detail 
+				srcBackground="${API_ENDPOINT.LARGE_IMAGE(resto.pictureId)}" 
+				srcBackgroundMin="${API_ENDPOINT.SMALL_IMAGE(resto.pictureId)}"
 				title="${resto.name}" 
 				subtitle="${resto.city}">
 			</resto-banner-detail>

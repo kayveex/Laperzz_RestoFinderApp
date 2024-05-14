@@ -25,7 +25,7 @@ class CommentSection extends HTMLElement {
             ${comments.map(comment => `
                 <div class="comment_item">
                     <div class="profile">
-                        <img src="images/default_profile.png" alt="Default Profile Picture">
+                        <img src="webAssets/default_profile.png" alt="Default Profile Picture">
                     </div>
                     <div class="comment_content">
                         <h3 tabindex="0">${comment.name}</h3>

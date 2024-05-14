@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import {createLikeButtonTemplate, createLikedButtonTemplate} from './subcomponent/like-button';
-import FavoriteRestoIdb from '../../data/favorite-resto-idb.js';
-import RestoDBSource from '../../data/restodb-source.js';
+import FavoriteRestoIdb from '../../data/favorite-restaurant-idb.js';
+import RestoDBSource from '../../data/therestaurantdb-source.js';
 class LikeButton extends HTMLElement {
 	constructor() {
 		super();
@@ -27,18 +27,18 @@ class LikeButton extends HTMLElement {
 	}
 
 	async isTheIDExist(IdFromAPI) {
-		const checkId = await FavoriteRestoIdb.getResto(IdFromAPI);
+		const checkId = await FavoriteRestoIdb.getRestaurant(IdFromAPI);
 		console.log(checkId);
 
 		if (checkId && checkId.id !== undefined) {
-			return true; // Restoran ditemukan dalam database
+			return true;
 		}
 
-		return false; // Restoran tidak ditemukan dalam database
+		return false;
 	}
 
 	async getRestoData(IdFromAPI) {
-		const resto = await RestoDBSource.restoDetail(IdFromAPI);
+		const resto = await RestoDBSource.detailRestaurant(IdFromAPI);
 		return resto;
 	}
 
@@ -49,7 +49,7 @@ class LikeButton extends HTMLElement {
 			const IdFromAPI = this.getAttribute('IdFromAPI');
 			const restoData = await this.getRestoData(IdFromAPI);
 			const extractData = this.extractRestoData(restoData);
-			await FavoriteRestoIdb.putResto(extractData);
+			await FavoriteRestoIdb.putRestaurant(extractData);
 			this.render(IdFromAPI);
 		});
 	}
@@ -59,7 +59,7 @@ class LikeButton extends HTMLElement {
 		const likedButton = this.querySelector('#likeButton');
 		likedButton.addEventListener('click', async () => {
 			const IdFromAPI = this.getAttribute('IdFromAPI');
-			await FavoriteRestoIdb.deleteResto(IdFromAPI);
+			await FavoriteRestoIdb.deleteRestaurant(IdFromAPI);
 			this.render(IdFromAPI);
 		});
 	}

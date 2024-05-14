@@ -1,7 +1,7 @@
 
 /* eslint-disable no-useless-constructor */
 
-import RestoDBSource from '../../data/restodb-source';
+import RestoDBSource from '../../data/therestaurantdb-source';
 import createRestoItemTemplate from './subcomponent/resto-item';
 
 class ExploreRestoSection extends HTMLElement {
@@ -50,7 +50,8 @@ class ExploreRestoSection extends HTMLElement {
 
 		try {
 			// Get the data from API
-			const restoData = await RestoDBSource.restoLists();
+			const restoData = await RestoDBSource.listRestaurants();
+			console.log(restoData);
 			const elapsedTime = Date.now() - startTime;
 			const timeoutDuration = Math.max(2000 - elapsedTime, 0);
 
